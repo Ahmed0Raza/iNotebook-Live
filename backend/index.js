@@ -6,7 +6,7 @@ const authRoutes = require('./routes/auth');
 const notesRoutes = require('./routes/notes'); // Uncomment if needed
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port =  5000;
 
 // Connect to MongoDB
 connectToMongo();
