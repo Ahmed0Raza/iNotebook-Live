@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [credential, setCredential] = useState({
@@ -15,46 +15,11 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Your form submission logic
+  };
 
-    try {
-      const response = await fetch("hhttps://inotebook-live.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: credential.email,
-          password: credential.password,
-        }),
-      });
-
-      if (response.ok) {
-        const json = await response.json();
-        if (json.authToken) {
-          localStorage.setItem("token", json.authToken);
-          props.showAlert("You have successfully logged in!", "success");
-          navigate("/home");
-        } else {
-          props.showAlert(
-            "The credentials you entered are incorrect. Please try again.",
-            "danger"
-          );
-        }
-      } else {
-        const errorData = await response.json();
-        // Check if errorData contains a message
-        const errorMessage =
-          errorData.error ||
-          "The credentials you entered are incorrect. Please try again.";
-        props.showAlert(errorMessage, "danger");
-      }
-    } catch (error) {
-      console.error("There was an error with the fetch operation:", error);
-      props.showAlert(
-        "An error occurred while logging in. Please try again later.",
-        "danger"
-      );
-    }
+  const handleSignUpClick = () => {
+    navigate("/signup");
   };
 
   return (
@@ -65,10 +30,7 @@ const Login = (props) => {
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               Email address
             </label>
             <input
@@ -83,10 +45,7 @@ const Login = (props) => {
             />
           </div>
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               Password
             </label>
             <input
@@ -107,10 +66,13 @@ const Login = (props) => {
             Login
           </button>
           <p className="text-gray-300">
-            Don't have an account?
-            <Link to="/signup" className="text-blue-500 hover:text-blue-700">
+            Don't have an account? 
+            <button 
+              onClick={handleSignUpClick}
+              className="text-blue-500 hover:text-blue-700 focus:outline-none"
+            >
               Sign Up
-            </Link>
+            </button>
           </p>
         </form>
       </div>
