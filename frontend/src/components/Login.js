@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [credential, setCredential] = useState({
@@ -17,7 +17,7 @@ const Login = (props) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("hhttps://inotebook-live.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -108,9 +108,9 @@ const Login = (props) => {
           </button>
           <p className="text-gray-300">
             Don't have an account?
-            <a href="/signup" className="text-blue-500 hover:text-blue-700">
+            <Link to="/signup" className="text-blue-500 hover:text-blue-700">
               Sign Up
-            </a>
+            </Link>
           </p>
         </form>
       </div>

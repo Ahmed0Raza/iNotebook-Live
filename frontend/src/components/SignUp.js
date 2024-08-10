@@ -28,7 +28,7 @@ const SignUp = (props) => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/createuser",
+        "https://inotebook-live.onrender.com/api/auth/createuser",
         {
           method: "POST",
           headers: {
