@@ -85,19 +85,18 @@ const Notes = (props) => {
         closeModal={closeModal}
       />
 
-<div className="container mx-auto my-6 px-4 sm:px-6 lg:px-8">
-  <h2 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-4 text-center">Your Notes</h2>
-  {notes.length === 0 ? (
-    <div className="text-gray-500 dark:text-gray-400 text-center">No notes to display</div>
-  ) : (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {notes.map((note) => (
-        <Noteitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />
-      ))}
-    </div>
-  )}
-</div>
-
+      <div className="container mx-auto my-6 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-4 text-center">Your Notes</h2>
+        {notes.length === 0 ? (
+          <div className="text-gray-500 dark:text-gray-400 text-center">No notes to display</div>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-6">
+            {notes.map((note) => (
+              <Noteitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />
+            ))}
+          </div>
+        )}
+      </div>
     </>
   );
 };

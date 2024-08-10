@@ -110,7 +110,7 @@ const Login = (props) => {
             Login
           </button>
           <div>
-            <p>
+            <p className="text-gray-300">
               Don't have an account? 
               <button 
                 onClick={handleSignUpClick}
