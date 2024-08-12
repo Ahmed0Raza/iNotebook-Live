@@ -40,12 +40,9 @@ const AddNote = (props) => {
     setNote({ title: "", description: "", tag: "" });
     setErrors({ title: "", description: "", tag: "" });
 
-    props.showAlert("Note edited successfully", "success");
+    props.showAlert("Note added successfully", "success");
  
-    // Automatically clear the alert after 3 seconds
-    setTimeout(() => {
-      setAlert(null);
-    }, 2000);
+   
   };
 
   const onChange = (e) => {
