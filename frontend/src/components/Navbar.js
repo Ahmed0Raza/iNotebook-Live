@@ -33,7 +33,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="bg-gray-200 p-4 dark:bg-gray-900 md:p-6">
+    <nav className="sticky top-0 z-10 bg-gray-200 p-4 dark:bg-gray-900 md:p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6">
           <h3 className="text-2xl font-bold tracking-tighter dark:text-gray-400 md:text-3xl">
