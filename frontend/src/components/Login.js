@@ -56,7 +56,8 @@ const Login = (props) => {
     }
   };
 
-  const handleSignUpClick = () => {
+  const handleSignUpClick = (e) => {
+    e.preventDefault();
     navigate("/signup");
   };
 
@@ -111,13 +112,14 @@ const Login = (props) => {
           </button>
           <div>
             <p className="text-gray-300">
-              Don't have an account? 
-              <button 
+              Don't have an account?{" "}
+              <a
+                href="/signup"
                 onClick={handleSignUpClick}
                 className="text-blue-500 hover:text-blue-700 focus:outline-none"
               >
                 Sign Up
-              </button>
+              </a>
             </p>
           </div>
         </form>
