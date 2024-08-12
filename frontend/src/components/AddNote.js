@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import noteContext from "../context/notes/NoteContext";
 import Alert from "./Alert"; // Import the Alert component
 
-const AddNote = () => {
+const AddNote = (props) => {
   const context = useContext(noteContext);
   const { addNote } = context;
 
@@ -40,8 +40,8 @@ const AddNote = () => {
     setNote({ title: "", description: "", tag: "" });
     setErrors({ title: "", description: "", tag: "" });
 
-    setAlert({ msg: "Note added successfully!", alertType: "success" }); // Set the success alert
-
+    props.showAlert("Note edited successfully", "success");
+ 
     // Automatically clear the alert after 3 seconds
     setTimeout(() => {
       setAlert(null);
@@ -51,7 +51,7 @@ const AddNote = () => {
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
 
-    
+
   };
 
   return (
