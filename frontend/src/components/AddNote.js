@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import noteContext from "../context/notes/NoteContext";
+import Alert from "./Alert"; // Import the Alert component
 
 const AddNote = () => {
   const context = useContext(noteContext);
@@ -7,6 +8,7 @@ const AddNote = () => {
 
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
   const [errors, setErrors] = useState({ title: "", description: "", tag: "" });
+  const [alert, setAlert] = useState(null); // State for managing the alert
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +39,12 @@ const AddNote = () => {
     addNote(note.title, note.description, note.tag);
     setNote({ title: "", description: "", tag: "" });
     setErrors({ title: "", description: "", tag: "" });
+    setAlert({ msg: "Note added successfully!", alertType: "success" }); // Set the success alert
+
+    // Automatically clear the alert after 3 seconds
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
   };
 
   const onChange = (e) => {
@@ -45,7 +53,12 @@ const AddNote = () => {
 
   return (
     <div className="flex items-center justify-center bg-gray-200 dark:bg-gray-900 px-4 sm:px-6 lg:px-8 py-8">
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg w-full max-w-md sm:max-w-lg lg:max-w-2xl p-6 box-border" style={{ marginTop: -30 }}>
+      <div
+        className="bg-gray-800 text-white rounded-lg shadow-lg w-full max-w-md sm:max-w-lg lg:max-w-2xl p-6 box-border"
+        style={{ marginTop: "20px" }} 
+      >
+        {/* Display the alert */}
+        {alert && <Alert alert={alert} />}
         <h2 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-6 text-center">Add a Note</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

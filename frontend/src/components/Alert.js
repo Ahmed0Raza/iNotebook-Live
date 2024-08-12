@@ -21,15 +21,24 @@ function Alert(props) {
   };
 
   return (
-    <div style={{ height: "60px" }}>
+    <div>
       {props.alert && (
         <div
-          className={`flex items-center p-3 mb-4 text-sm ${props.alert.alertType === 'success' ? 'bg-green-100 text-green-800' : props.alert.alertType === 'danger' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'} rounded-lg`}
+          className={`fixed top-20 left-0 right-0 flex items-center p-3 mb-4 text-sm ${
+            props.alert.alertType === "success"
+              ? "bg-green-100 text-green-800"
+              : props.alert.alertType === "danger"
+              ? "bg-red-100 text-red-800"
+              : "bg-blue-100 text-blue-800"
+          } rounded-lg z-50`}
           role="alert"
         >
           {getIcon(props.alert.alertType)}
           <div className="ml-2">
-            <strong className="font-medium text-xs">{capitalize(props.alert.alertType)}</strong>: <span className="text-xs">{props.alert.msg}</span>
+            <strong className="font-medium text-xs">
+              {capitalize(props.alert.alertType)}
+            </strong>
+            : <span className="text-xs">{props.alert.msg}</span>
           </div>
         </div>
       )}
