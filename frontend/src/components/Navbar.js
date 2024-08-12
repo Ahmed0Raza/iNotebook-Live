@@ -10,6 +10,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate("/");
+    props.showAlert("You have successfully logged out!", "success");
   };
 
   const handleHomeClick = () => {
