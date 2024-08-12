@@ -35,6 +35,7 @@ const Notes = (props) => {
   };
 
   const handleClick = (e) => {
+    
     e.preventDefault();
     let newErrors = { etitle: "", edescription: "", etag: "" };
     let isValid = true;
