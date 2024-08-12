@@ -39,7 +39,7 @@ const AddNote = () => {
     addNote(note.title, note.description, note.tag);
     setNote({ title: "", description: "", tag: "" });
     setErrors({ title: "", description: "", tag: "" });
-    
+
     setAlert({ msg: "Note added successfully!", alertType: "success" }); // Set the success alert
 
     // Automatically clear the alert after 3 seconds
@@ -50,6 +50,8 @@ const AddNote = () => {
 
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
+
+    
   };
 
   return (
