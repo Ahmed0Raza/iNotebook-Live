@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import noteContext from "../context/notes/NoteContext";
 import Alert from "./Alert"; // Import the Alert component
 
