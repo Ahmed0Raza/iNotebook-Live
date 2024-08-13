@@ -62,7 +62,6 @@ const SignUp = (props) => {
         );
       }
     } catch (error) {
-      console.error("There was an error with the fetch operation:", error);
       if (error.message.includes("Email address already registered")) {
         props.showAlert(
           "The email address is already registered. Please use a different email.",

@@ -48,7 +48,6 @@ const Login = (props) => {
         props.showAlert(errorMessage, "danger");
       }
     } catch (error) {
-      console.error("There was an error with the fetch operation:", error);
       props.showAlert(
         "An error occurred while logging in. Please try again later.",
         "danger"

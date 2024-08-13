@@ -20,10 +20,8 @@ const NoteState = (props) => {
                 throw new Error('Failed to fetch notes');
             }
             const json = await response.json();
-            console.log(json);
             setNotes(json);
         } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
         }
     };
 
@@ -44,8 +42,7 @@ const NoteState = (props) => {
                 throw new Error(`Failed to add note: ${errorText}`);
             }
 
-            const json = await response.json(); // Parse the JSON response
-            console.log(json);
+            const json = await response.json();
 
             const note = {
                 "_id": json._id,
@@ -58,7 +55,6 @@ const NoteState = (props) => {
             };
             setNotes(notes.concat(note));
         } catch (error) {
-            console.error("Error adding note:", error);
         }
     };
 
@@ -72,13 +68,11 @@ const NoteState = (props) => {
                     'auth-token': localStorage.getItem('token'),
                 }
             });
-            const json = await response.json();
-            console.log(json);
+            
 
             // Remove note from state
             setNotes(notes.filter(note => note._id !== id));
         } catch (error) {
-            console.error("Error deleting note:", error);
         }
     };
 
@@ -102,7 +96,6 @@ const NoteState = (props) => {
             // Update note in state
             setNotes(notes.map(note => note._id === id ? { ...note, title, description, tag } : note));
         } catch (error) {
-            console.error("Error updating note:", error);
         }
     };
 
