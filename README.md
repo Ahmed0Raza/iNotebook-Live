@@ -34,3 +34,18 @@
 - Navigate to the app, sign up or log in, and start managing your notes.
 
 ---
+# Navigate to the frontend folder
+cd frontend
+
+# Start the frontend development server
+npm run start
+
+# Go back to the root directory
+cd ..
+
+# Navigate to the backend folder
+cd backend
+
+# Start the backend server using nodemon
+nodemon index.js
+
