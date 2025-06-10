@@ -1,85 +1,135 @@
-# 📓 iNotebook
+# iNotebook-Live
 
-**iNotebook** is a secure and user-friendly web application designed to help you manage your notes online. Whether you're jotting down ideas or keeping track of tasks, iNotebook ensures your notes are always accessible and protected.
+A **MERN stack** (MongoDB, Express.js, React.js, Node.js) application for managing your notes online. iNotebook-Live lets you securely add, update, and delete your personal notes from anywhere, on any device.
 
----
+## Features
 
-## 🚀 Features
-
-### 🔐 User Authentication
-- **Sign Up**: Easily create a new account using your email and password.
-- **Login**: Securely log in to your account and access your notes anytime.
-
-### 🏠 Home Page
-- **Add Notes**: Create and save personalized notes.
-- **View Notes**: See all your notes in one place, organized and easy to read.
+- User authentication (JWT based)
+- Add, edit, and delete notes
+- Responsive and modern UI
+- RESTful API backend
+- Separate folders for frontend and backend
+- Secure data handling
 
 ---
 
-## 🛠️ Tech Stack
+## Project Structure
 
-- **Frontend**: React.js  
-- **Backend**: Node.js + Express.js  
-- **Database**: MongoDB  
-
----
-
-## 📦 Installation & Running Locally
-
-Follow the steps below to set up the project on your local machine:
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/inotebook.git
-cd inotebook
 ```
-
-### 2. Install Dependencies
-
-#### Frontend
-```bash
-cd frontend
-npm install
-```
-
-#### Backend
-```bash
-cd ../backend
-npm install
+iNotebook-Live/
+├── backend/     # Express + Node.js API
+├── frontend/    # React.js client
+└── README.md
 ```
 
 ---
 
-## ▶️ Running the Application
+## Prerequisites
 
-Use the following commands to start the frontend and backend servers:
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [npm](https://www.npmjs.com/)
+- [MongoDB](https://www.mongodb.com/) (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
-# Navigate to the frontend directory
-cd frontend
-
-# Start the frontend development server
-npm run start
+git clone https://github.com/Ahmed0Raza/iNotebook-Live.git
+cd iNotebook-Live
 ```
 
-```bash
-# Go back to the root directory
-cd ..
+---
 
-# Navigate to the backend directory
+### 2. Backend Setup
+
+```bash
 cd backend
-
-# Start the backend server using nodemon
-nodemon index.js
+npm install
 ```
 
+#### Create a `.env` file in `backend/` with the following variables:
+
+```env
+PORT=5000
+MONGO_URI=<your-mongodb-connection-string>
+JWT_SECRET=<your-secret-key>
+```
+
+#### Start the backend server:
+
+```bash
+npm start
+```
+
+The backend runs at [http://localhost:5000](http://localhost:5000).
+
 ---
 
-## 📋 Usage
+### 3. Frontend Setup
 
-1. Open your browser and navigate to the app.
-2. Sign up with a new account or log in with your existing credentials.
-3. Start creating and managing your notes effortlessly!
+Open a new terminal window/tab:
+
+```bash
+cd frontend
+npm install
+```
+
+#### Start the React frontend:
+
+```bash
+npm start
+```
+
+The frontend runs at [http://localhost:3000](http://localhost:3000).
 
 ---
 
+## Usage
+
+1. Register for an account or log in.
+2. Add, edit, or delete notes securely.
+3. Your notes are synced with the backend in real-time.
+
+---
+
+## Scripts
+
+### Backend
+
+- `npm start` - Runs the backend server
+- `npm run dev` - Runs backend with nodemon (auto-reloads on changes)
+
+### Frontend
+
+- `npm start` - Runs the React development server
+
+---
+
+## Tech Stack
+
+- **Frontend:** React.js, HTML, CSS, Bootstrap
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** JWT
+
+---
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+## Author
+
+**Ahmed Raza**  
+[GitHub](https://github.com/Ahmed0Raza)
